@@ -23,7 +23,7 @@ class MessageHelper {
     }
   }
   static getTimestamp() {
-    return Number.parseInt(Date.now() / 1000)
+    return Number.parseInt(Date.now() / 1000, 10)
   }
   static encryptMessage(wechatEncryptor, content) {
     const encryptMessage = wechatEncryptor.encrypt(content)
