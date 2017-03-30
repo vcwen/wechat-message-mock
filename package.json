@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/wenwei1202/wechat-message-mock.git"
   },
-  "author": "",
+  "author": "Vincent Wen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wenwei1202/wechat-message-mock/issues"
