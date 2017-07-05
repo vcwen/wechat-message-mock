@@ -1,5 +1,5 @@
 const querystring = require('querystring')
-const request = require('request')
+const request = require('request-promise')
 const WechatCrypto = require('wechat-crypto')
 const MessageHelper = require('./MessageHelper')
 
@@ -10,7 +10,7 @@ class Sender {
     this.encodingAESKey = encodingAESKey || ''
     this.wechatEncryptor = new WechatCrypto(token, encodingAESKey, appId)
   }
-  send(url, message, encrypted, callback) {
+  send(url, message, encrypted) {
     if(encrypted) {
       message = MessageHelper.encryptMessage(this.wechatEncryptor, message)
     }
@@ -23,14 +23,14 @@ class Sender {
       signature,
     })
     url += '?' + qs
-    request.post({
-      url,
+    return request.post({
+      uri: url,
       body: message,
       headers: {
         'Content-Type': 'text/xml',
         'Content-Length': Buffer.byteLength(message),
       },
-    }, callback)
+    })
   }
 }
 
