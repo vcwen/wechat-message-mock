@@ -3,11 +3,6 @@
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
-<Event><![CDATA[subscribe]]></Event>
-<% if (eventKey) {%>
-<EventKey><![CDATA[<%= eventKey %>]]></EventKey>
-<% } %>
-<% if (ticket) {%>
-<Ticket><![CDATA[<%= ticket %>]]></Ticket>
-<% } %>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[<%- eventKey %>]]></EventKey>
 </xml>
