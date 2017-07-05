@@ -15,8 +15,14 @@ class WechatMessage {
       timestamp: timestamp,
     }, this.data)
 
-    let filename = path.resolve(__dirname, `./template/${this.msgType}_${this.eventType}.tpl`)
-    const tpl = fs.readFileSync(filename, 'utf8')
+    let filepath
+    if(this.msgType === 'event') {
+      filepath = path.resolve(__dirname, `./template/${this.msgType}_${this.eventType}.tpl`)
+    } else {
+      filepath = path.resolve(__dirname, `./template/msg_${this.msgType}.tpl`)
+    }
+
+    const tpl = fs.readFileSync(filepath, 'utf8')
     let compiled = ejs.compile(tpl)
     return compiled(params)
   }
