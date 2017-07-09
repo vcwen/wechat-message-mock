@@ -4,10 +4,10 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[MASSSENDJOBFINISH]]></Event>
-<MsgID><%= msgId %></MsgID>
+<MsgID><%= data.msgId %></MsgID>
 <Status><![CDATA[sendsuccess]]></Status>
-<TotalCount><%= total %></TotalCount>
-<FilterCount><%= filterCount %></FilterCount>
-<SentCount><%= sentCount %></SentCount>
-<ErrorCount><%= errorCount %></ErrorCount>
+<TotalCount><%= data.total %></TotalCount>
+<FilterCount><%= data.filterCount %></FilterCount>
+<SentCount><%= data.sentCount %></SentCount>
+<ErrorCount><%= data.errorCount %></ErrorCount>
 </xml>

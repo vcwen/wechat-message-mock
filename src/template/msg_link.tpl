@@ -3,8 +3,8 @@
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[link]]></MsgType>
-<Title><![CDATA[<%- title %>]]></Title>
-<Description><![CDATA[<%- desc %>]]></Description>
-<Url><![CDATA[<%- url %>]]></Url>
-<MsgId><%= msgId %></MsgId>
+<Title><![CDATA[<%- data.title %>]]></Title>
+<Description><![CDATA[<%- data.desc %>]]></Description>
+<Url><![CDATA[<%- data.url %>]]></Url>
+<MsgId><%= data.msgId %></MsgId>
 </xml>

@@ -3,9 +3,9 @@
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[location]]></MsgType>
-<Location_X><%= lat %></Location_X>
-<Location_Y><%= lng %></Location_Y>
-<Scale><%= scale %></Scale>
-<Label><![CDATA[<%- label %>]]></Label>
-<MsgId><%= msgId %></MsgId>
+<Location_X><%= data.lat %></Location_X>
+<Location_Y><%= data.lng %></Location_Y>
+<Scale><%= data.scale %></Scale>
+<Label><![CDATA[<%- data.label %>]]></Label>
+<MsgId><%= data.msgId %></MsgId>
 </xml>

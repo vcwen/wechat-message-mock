@@ -8,7 +8,7 @@
 <SendPicsInfo>
 <Count><%= count %></Count>
 <PicList>
-<% pics.forEach((item) => {
+<% pics.forEach((item) => { %>
 <item>
 <PicMd5Sum><![CDATA[<%- item.md5Sum %>]]></PicMd5Sum>
 </item>

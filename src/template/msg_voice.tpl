@@ -3,8 +3,10 @@
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[voice]]></MsgType>
-<MediaId><![CDATA[<%= mediaId %>]]></MediaId>
-<Format><![CDATA[<%= format %>]]></Format>
-<Recognition><![CDATA[<%- recognition %>]]></Recognition>
-<MsgId><%= msgId %></MsgId>
+<MediaId><![CDATA[<%= data.mediaId %>]]></MediaId>
+<Format><![CDATA[<%= data.format %>]]></Format>
+<% if (data.eventKey) {%>
+<Recognition><![CDATA[<%- data.recognition %>]]></Recognition>
+<% } %>
+<MsgId><%= data.msgId %></MsgId>
 </xml>

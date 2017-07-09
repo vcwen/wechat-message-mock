@@ -4,10 +4,8 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[subscribe]]></Event>
-<% if (eventKey) {%>
-<EventKey><![CDATA[<%= eventKey %>]]></EventKey>
-<% } %>
-<% if (ticket) {%>
-<Ticket><![CDATA[<%= ticket %>]]></Ticket>
+<% if (data.eventKey) {%>
+<EventKey><![CDATA[<%= data.eventKey %>]]></EventKey>
+<Ticket><![CDATA[<%= data.ticket %>]]></Ticket>
 <% } %>
 </xml>

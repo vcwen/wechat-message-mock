@@ -4,4 +4,4 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[unsubscribe]]></Event>
-
+</xml>

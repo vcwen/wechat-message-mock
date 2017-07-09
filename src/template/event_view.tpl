@@ -4,5 +4,5 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[VIEW]]></Event>
-<EventKey><![CDATA[<%- eventKey %>]]></EventKey>
+<EventKey><![CDATA[<%- data.eventKey %>]]></EventKey>
 </xml>

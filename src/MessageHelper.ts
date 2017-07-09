@@ -1,11 +1,11 @@
-const crypto = require('crypto')
-const ejs = require('ejs')
+import * as crypto from 'crypto'
+import * as ejs from 'ejs'
 
 const encryptedTpl = '<xml><Encrypt><![CDATA[<%-encrypt%>]]></Encrypt></xml>'
 const compiledTpl = ejs.compile(encryptedTpl)
 
-class MessageHelper {
-  static generateSignature(token, nonce, timestamp) {
+export default class MessageHelper {
+  public static generateSignature(token, nonce, timestamp) {
     const shasum = crypto.createHash('sha1')
     const arr = [token, timestamp, nonce].sort()
     shasum.update(arr.join(''))
@@ -13,7 +13,7 @@ class MessageHelper {
     return signature
   }
 
-  static generateNonce() {
+  public static generateNonce() {
     const regex = /[1-9]\d{9}/
     const match = regex.exec(Math.random().toString())
     if (match) {
@@ -22,16 +22,14 @@ class MessageHelper {
       throw new Error('Failed to generate nonce string')
     }
   }
-  static getTimestamp() {
-    return Number.parseInt(Date.now() / 1000, 10)
+  public static getTimestamp() {
+    return Math.floor(Date.now() / 1000)
   }
-  static encryptMessage(wechatEncryptor, content) {
+  public static encryptMessage(wechatEncryptor: any, content: string) {
     const encryptMessage = wechatEncryptor.encrypt(content)
     const encryptXml = compiledTpl({
-      encrypt: encryptMessage,
+      encrypt: encryptMessage
     })
     return encryptXml
   }
 }
-
-module.exports = MessageHelper

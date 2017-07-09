@@ -4,12 +4,12 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[location_select]]></Event>
-<EventKey><![CDATA[<%- eventKey %>]]></EventKey>
+<EventKey><![CDATA[<%- data.eventKey %>]]></EventKey>
 <SendLocationInfo>
-<Location_X><![CDATA[<%= lat %>]]></Location_X>
-<Location_Y><![CDATA[<%= lng %>]]></Location_Y>
-<Scale><![CDATA[<%= scale %>]]></Scale>
-<Label><![CDATA[<%- label %>]]></Label>
-<Poiname><![CDATA[<%- poi %>]]></Poiname>
+<Location_X><![CDATA[<%= data.lat %>]]></Location_X>
+<Location_Y><![CDATA[<%= data.lng %>]]></Location_Y>
+<Scale><![CDATA[<%= data.scale %>]]></Scale>
+<Label><![CDATA[<%- data.label %>]]></Label>
+<Poiname><![CDATA[<%- data.poi %>]]></Poiname>
 </SendLocationInfo>
 </xml>

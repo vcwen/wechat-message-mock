@@ -4,7 +4,7 @@
 <CreateTime><%= timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[LOCATION]]></Event>
-<Latitude><%= lat %></Latitude>
-<Longitude><%= lng %></Longitude>
-<Precision><%= precision %></Precision>
+<Latitude><%= data.lat %></Latitude>
+<Longitude><%= data.lng %></Longitude>
+<Precision><%= data.precision %></Precision>
 </xml>

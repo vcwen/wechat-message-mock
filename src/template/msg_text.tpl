@@ -3,6 +3,6 @@
  <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
  <CreateTime><%= timestamp %></CreateTime>
  <MsgType><![CDATA[text]]></MsgType>
- <Content><![CDATA[<%= content %>]]></Content>
- <MsgId><%= msgId %></MsgId>
+ <Content><![CDATA[<%= data.content %>]]></Content>
+ <MsgId><%= data.msgId %></MsgId>
  </xml>
