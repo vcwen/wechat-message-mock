@@ -1,3 +1,3 @@
-export * from './MessageHelper'
-export * from './Sender'
-export * from './WechatMessage'
+export  { default as MessageHelper} from './MessageHelper'
+export { default as Sender } from './Sender'
+export {default as WechatMessage} from './WechatMessage'
