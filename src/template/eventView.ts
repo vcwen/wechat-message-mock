@@ -1,7 +1,7 @@
 export const eventView = `<xml>
-<ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
-<FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
-<CreateTime><%= timestamp %></CreateTime>
+<ToUserName><![CDATA[<%- data.toUserName %>]]></ToUserName>
+<FromUserName><![CDATA[<%- data.fromUserName %>]]></FromUserName>
+<CreateTime><%= data.timestamp %></CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[VIEW]]></Event>
 <EventKey><![CDATA[<%- data.eventKey %>]]></EventKey>

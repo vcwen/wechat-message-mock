@@ -6,18 +6,13 @@ export default class WechatMessage {
   public msgType: string
   public eventType: string
   public data: any
-  constructor(msgType: string, eventType: string, data: any) {
+  constructor(msgType: string, data: any, eventType: string = '') {
     this.msgType = msgType
-    this.eventType = eventType ? eventType : ''
+    this.eventType = eventType
     this.data = data
   }
-  public toXmlFormat(fromUser, toUser, timestamp) {
-    const params = Object.assign({}, {
-      fromUserName: fromUser,
-      toUserName: toUser,
-      timestamp
-    }, {data: this.data})
-
+  public toXmlFormat() {
+    const params = Object.assign({}, {data: this.data})
     let name
     if (this.msgType === 'event') {
       name = this.msgType + '_' + this.eventType
@@ -26,6 +21,6 @@ export default class WechatMessage {
     }
     const tpl = template[camelcase(name)]
     const compiled = ejs.compile(tpl)
-    return compiled(params)
+    return compiled(params) as string
   }
 }

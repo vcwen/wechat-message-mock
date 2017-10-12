@@ -2,4 +2,3 @@
 [![dependencies Status](https://david-dm.org/wenwei1202/wechat-message-mock/status.svg)](https://david-dm.org/wenwei1202/wechat-message-mock)
 [![Build Status](https://travis-ci.org/wenwei1202/wechat-message-mock.svg?branch=master)](https://travis-ci.org/wenwei1202/wechat-message-mock)
 [![Coverage Status](https://coveralls.io/repos/github/wenwei1202/wechat-message-mock/badge.svg?branch=master)](https://coveralls.io/github/wenwei1202/wechat-message-mock?branch=master)
-[![Code Climate](https://codeclimate.com/github/wenwei1202/passport-wechat-public/badges/gpa.svg)](https://codeclimate.com/github/wenwei1202/passport-wechat-public)

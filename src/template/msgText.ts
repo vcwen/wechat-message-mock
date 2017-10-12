@@ -1,7 +1,7 @@
 export const msgText = `<xml>
-<ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
-<FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
-<CreateTime><%= timestamp %></CreateTime>
+<ToUserName><![CDATA[<%- data.toUserName %>]]></ToUserName>
+<FromUserName><![CDATA[<%- data.fromUserName %>]]></FromUserName>
+<CreateTime><%= data.timestamp %></CreateTime>
 <MsgType><![CDATA[text]]></MsgType>
 <Content><![CDATA[<%= data.content %>]]></Content>
 <MsgId><%= data.msgId %></MsgId>

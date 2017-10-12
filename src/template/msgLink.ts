@@ -1,7 +1,7 @@
 export const msgLink = `<xml>
-<ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
-<FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
-<CreateTime><%= timestamp %></CreateTime>
+<ToUserName><![CDATA[<%- data.toUserName %>]]></ToUserName>
+<FromUserName><![CDATA[<%- data.fromUserName %>]]></FromUserName>
+<CreateTime><%= data.timestamp %></CreateTime>
 <MsgType><![CDATA[link]]></MsgType>
 <Title><![CDATA[<%- data.title %>]]></Title>
 <Description><![CDATA[<%- data.desc %>]]></Description>
