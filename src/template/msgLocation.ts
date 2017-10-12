@@ -1,4 +1,4 @@
-<xml>
+export const msgLocation = `<xml>
 <ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
@@ -8,4 +8,4 @@
 <Scale><%= data.scale %></Scale>
 <Label><![CDATA[<%- data.label %>]]></Label>
 <MsgId><%= data.msgId %></MsgId>
-</xml>
+</xml>`

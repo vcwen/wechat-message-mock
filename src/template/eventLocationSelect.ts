@@ -1,4 +1,4 @@
-<xml>
+export const eventLocationSelect =  `<xml>
 <ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
@@ -12,4 +12,4 @@
 <Label><![CDATA[<%- data.label %>]]></Label>
 <Poiname><![CDATA[<%- data.poi %>]]></Poiname>
 </SendLocationInfo>
-</xml>
+</xml>`

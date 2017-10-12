@@ -8,6 +8,10 @@
   dependencies:
     axios "*"
 
+"@types/camelcase@^4.1.0":
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/@types/camelcase/download/@types/camelcase-4.1.0.tgz#e054f7986f31658d49936261b5cd4588ef29d1ee"
+
 "@types/jest@^21.1.2":
   version "21.1.2"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-21.1.2.tgz#05ebfa64817b626694ced56745a7949281981048"

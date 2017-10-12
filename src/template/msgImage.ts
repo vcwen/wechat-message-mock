@@ -1,4 +1,4 @@
-<xml>
+export const msgImage =  `<xml>
  <ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
  <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
  <CreateTime><%= timestamp %></CreateTime>
@@ -6,4 +6,4 @@
  <PicUrl><![CDATA[<%- data.imageUrl %>]]></PicUrl>
  <MediaId><![CDATA[<%= data.mediaId %>]]></MediaId>
  <MsgId><%= data.msgId %></MsgId>
- </xml>
+ </xml>`

@@ -1,6 +1,6 @@
+import * as camelcase from 'camelcase'
 import * as ejs from 'ejs'
-import * as fs from 'fs'
-import * as path from 'path'
+import * as template from './template'
 
 export default class WechatMessage {
   public msgType: string
@@ -18,14 +18,13 @@ export default class WechatMessage {
       timestamp
     }, {data: this.data})
 
-    let filepath
+    let name
     if (this.msgType === 'event') {
-      filepath = path.resolve(__dirname, `./template/${this.msgType}_${this.eventType}.tpl`)
+      name = this.msgType + '_' + this.eventType
     } else {
-      filepath = path.resolve(__dirname, `./template/msg_${this.msgType}.tpl`)
+      name =  'msg_' + this.msgType
     }
-
-    const tpl = fs.readFileSync(filepath, 'utf8')
+    const tpl = template[camelcase(name)]
     const compiled = ejs.compile(tpl)
     return compiled(params)
   }

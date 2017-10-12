@@ -25,8 +25,7 @@ describe('WechatMessage',  () => {
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[CLICK]]></Event>
 <EventKey><![CDATA[event_key]]></EventKey>
-</xml>
-`
+</xml>`
     expect(xml).toBe(exepectedXml)
   })
 })

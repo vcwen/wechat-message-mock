@@ -1,4 +1,4 @@
-<xml>
+export const eventMassSendJobFinish =  `<xml>
 <ToUserName><![CDATA[<%- toUserName %>]]></ToUserName>
 <FromUserName><![CDATA[<%- fromUserName %>]]></FromUserName>
 <CreateTime><%= timestamp %></CreateTime>
@@ -10,4 +10,4 @@
 <FilterCount><%= data.filterCount %></FilterCount>
 <SentCount><%= data.sentCount %></SentCount>
 <ErrorCount><%= data.errorCount %></ErrorCount>
-</xml>
+</xml>`
