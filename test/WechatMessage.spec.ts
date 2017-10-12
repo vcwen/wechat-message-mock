@@ -12,7 +12,7 @@ describe('WechatMessage',  () => {
       expect(message).toBeInstanceOf(WechatMessage)
     })
   })
-  it('should generate xml format message',  () => {
+  it('should generate xml format event message',  () => {
     const message = new WechatMessage('event', 'CLICK', {eventKey: 'event_key'})
     const timestamp = Date.now()
     const toUser = 'toUser'
@@ -25,6 +25,22 @@ describe('WechatMessage',  () => {
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[CLICK]]></Event>
 <EventKey><![CDATA[event_key]]></EventKey>
+</xml>`
+    expect(xml).toBe(exepectedXml)
+  })
+  it('should generate xml format common message',  () => {
+    const message = new WechatMessage('text', '', {content: 'text_test', msgId: '123456'})
+    const timestamp = Date.now()
+    const toUser = 'toUser'
+    const fromUser = 'fromUser'
+    const xml = message.toXmlFormat(fromUser, toUser, timestamp)
+    const exepectedXml = `<xml>
+<ToUserName><![CDATA[${toUser}]]></ToUserName>
+<FromUserName><![CDATA[${fromUser}]]></FromUserName>
+<CreateTime>${timestamp}</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[text_test]]></Content>
+<MsgId>123456</MsgId>
 </xml>`
     expect(xml).toBe(exepectedXml)
   })

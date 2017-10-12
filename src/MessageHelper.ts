@@ -15,12 +15,12 @@ export default class MessageHelper {
 
   public static generateNonce() {
     const regex = /[1-9]\d{9}/
-    const match = regex.exec(Math.random().toString())
-    if (match) {
-      return match[0]
-    } else {
-      throw new Error('Failed to generate nonce string')
+    let match
+    while (!match) {
+      match = regex.exec(Math.random().toString())
     }
+    return match[0]
+
   }
   public static getTimestamp() {
     return Math.floor(Date.now() / 1000)
