@@ -1,5 +1,6 @@
+import axios from 'axios'
+import {AxiosResponse} from 'axios'
 import * as  querystring from 'querystring'
-import * as request from 'request-promise'
 import * as WechatCrypto from 'wechat-crypto'
 import MessageHelper from './MessageHelper'
 
@@ -16,7 +17,7 @@ export default class Sender {
       this.wechatEncryptor = new WechatCrypto(token, encodingAESKey, appId)
     }
   }
-  public send(url: string, message: string, encrypted: boolean) {
+  public async send(url: string, message: string, encrypted: boolean): Promise<AxiosResponse> {
     if (encrypted) {
       message = MessageHelper.encryptMessage(this.wechatEncryptor, message)
     }
@@ -38,9 +39,7 @@ export default class Sender {
       })
     }
     url += '?' + qs
-    return request.post({
-      uri: url,
-      body: message,
+    return axios.post(url, message, {
       headers: {
         'Content-Type': 'text/xml',
         'Content-Length': Buffer.byteLength(message)

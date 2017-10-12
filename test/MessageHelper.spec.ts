@@ -1,4 +1,3 @@
-import {expect} from 'chai'
 import * as crypto from 'crypto'
 import * as ejs from 'ejs'
 import MessageHelper from '../src/MessageHelper'
@@ -9,16 +8,16 @@ describe('MessageHelper',  () => {
     const timestamp = 1490854140
     const nonce = 1899154533
     const signature = MessageHelper.generateSignature('qbtest', nonce, timestamp)
-    expect(signature).to.equal(expectedSignature)
+    expect(signature).toBe(expectedSignature)
   })
   it('can generate nonce string',  () => {
     const nonce = MessageHelper.generateNonce()
-    expect(nonce).to.match(/\d{10}/)
+    expect(nonce).toMatch(/\d{10}/)
   })
 
   it('can get timestamp',  () => {
     const timestamp = MessageHelper.getTimestamp()
-    expect(Date.now() - timestamp * 1000).to.below(1000)
+    expect(Date.now() - timestamp * 1000).toBeLessThan(1000)
   })
 
   it('can encrypt message',  () => {
@@ -29,13 +28,13 @@ describe('MessageHelper',  () => {
         return msg
       }
     }
-    const signature = MessageHelper.encryptMessage(encryptor, 'message')
+    const message = MessageHelper.encryptMessage(encryptor, 'message')
     const encryptedTpl = '<xml><Encrypt><![CDATA[<%-encrypt%>]]></Encrypt></xml>'
-    const compiledTpl = ejs.compile(encryptedTpl)
+    const compiledTpl = ejs.compile(encryptedTpl , {})
     const encryptMessage = encryptor.encrypt('message')
     const encrypted = compiledTpl({
       encrypt: encryptMessage
     })
-    expect(signature).to.equal(encrypted)
+    expect(message).toBe(encrypted)
   })
 })

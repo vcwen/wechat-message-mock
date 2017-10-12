@@ -1,16 +1,15 @@
-import {expect} from 'chai'
 import WechatMessage from '../src/WechatMessage'
 
 describe('WechatMessage',  () => {
   describe('constructor',  () => {
     it('should be able to create common message',  () => {
       const message = new WechatMessage('text', '', {content: 'This is a text message.'})
-      expect(message).to.be.instanceof(WechatMessage)
+      expect(message).toBeInstanceOf(WechatMessage)
     })
 
     it('should be able to create event message',  () => {
       const message = new WechatMessage('event', 'click', {eventKey: 'event_key'})
-      expect(message).to.be.instanceof(WechatMessage)
+      expect(message).toBeInstanceOf(WechatMessage)
     })
   })
   it('should generate xml format message',  () => {
@@ -28,6 +27,6 @@ describe('WechatMessage',  () => {
 <EventKey><![CDATA[event_key]]></EventKey>
 </xml>
 `
-    expect(xml).to.equal(exepectedXml)
+    expect(xml).toBe(exepectedXml)
   })
 })
