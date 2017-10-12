@@ -54,6 +54,7 @@
         "node_modules",
         "**/*.spec.ts",
         "test",
-        "dist"
+        "dist",
+        "__mocks__"
     ]
 }
