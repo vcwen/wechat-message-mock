@@ -5,7 +5,7 @@ import * as WechatCrypto from 'wechat-crypto'
 import MessageHelper from './MessageHelper'
 import WechatMessage from './WechatMessage'
 
-export default class Sender {
+export class Sender {
   private appId: string
   private token: string
   private encodingAESKey?: string
@@ -49,3 +49,5 @@ export default class Sender {
     })
   }
 }
+
+export default Sender

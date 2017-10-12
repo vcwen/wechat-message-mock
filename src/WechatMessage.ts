@@ -2,7 +2,7 @@ import * as camelcase from 'camelcase'
 import * as ejs from 'ejs'
 import * as template from './template'
 
-export default class WechatMessage {
+export class WechatMessage {
   public msgType: string
   public eventType: string
   public data: any
@@ -24,3 +24,5 @@ export default class WechatMessage {
     return compiled(params) as string
   }
 }
+
+export default WechatMessage

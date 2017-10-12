@@ -4,7 +4,7 @@ import * as ejs from 'ejs'
 const encryptedTpl = '<xml><Encrypt><![CDATA[<%-encrypt%>]]></Encrypt></xml>'
 const compiledTpl = ejs.compile(encryptedTpl)
 
-export default class MessageHelper {
+export class MessageHelper {
   public static generateSignature(token, nonce, timestamp) {
     const shasum = crypto.createHash('sha1')
     const arr = [token, timestamp, nonce].sort()
@@ -33,3 +33,5 @@ export default class MessageHelper {
     return encryptXml
   }
 }
+
+export default MessageHelper
